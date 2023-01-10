@@ -20,12 +20,14 @@ function addTask(e) {
   if(taskInput.value === ''){
     alert('Add a task');
   }
-  
+
   // Create li element
 
   const li = document.createElement('li');
   // Add class
+
   li.className = 'collection-item';
+  
   // Create text node and append to li
   li.appendChild(document.createTextNode(taskInput.value));
   // Create new link element
