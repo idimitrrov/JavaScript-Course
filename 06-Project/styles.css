@@ -1,0 +1,13 @@
+.disabled {
+    opacity: 0.5;
+  }
+  .disabled:hover {
+    opacity: 0.5;
+    background-color: initial;
+    cursor: not-allowed;
+    border: 1px solid #bbb;
+  }
+
+  input[type="submit"]:hover{
+    border: 1px solid #bbb;
+  }
