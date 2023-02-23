@@ -3,9 +3,8 @@ document.querySelector(".get-jokes").addEventListener("click", getJokes);
 function getJokes(e) {
   const number = document.querySelector('input[type="number"]').value;
 
-  // Clear existing jokes
-  document.querySelector(".jokes").innerHTML = "";
-
+  let output = "";
+  // Generating multiple responses depending on the value
   for (let i = 0; i < number; i++) {
     const xhr = new XMLHttpRequest();
 
@@ -15,15 +14,13 @@ function getJokes(e) {
       if (this.status === 200) {
         const response = JSON.parse(this.responseText);
         console.log(response);
-        let output = "";
+        // let output = "";
 
-        if (response.type === "success") {
-          output += "";
-        } else {
+        if (!!response.value) {
           output += `<li>${response.value}</li>`;
         }
 
-        document.querySelector(".jokes").innerHTML += output;
+        document.querySelector(".jokes").innerHTML = output;
       }
     };
 
