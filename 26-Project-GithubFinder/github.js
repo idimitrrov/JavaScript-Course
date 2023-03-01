@@ -5,11 +5,8 @@ class GitHub {
     this.requestInit = {
       method: "GET",
       headers: new Headers({
-        // "Access-Control-Allow-Origin": "*",
         Accept: "application/vnd.github+json",
-        Authorization:
-          "token " +
-          "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",
+        Authorization: "token " + "Placeholder Token",
       }),
     };
   }
