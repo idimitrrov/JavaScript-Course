@@ -9,7 +9,7 @@ class UI {
         <div class="row"> 
             <div class="col-md-3 text-center d-grid">
                 <img class="img-fluid mb-2" src="${user.avatar_url}">
-                <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-lg" style="height:47px;">View Profile</a>
+                <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-lg mb-1" style="height:47px;">View Profile</a>
             </div>
             <div class="col-md-9">
                 <span class="btn btn-primary disabled"">Public Repos: ${user.public_repos}</span>
@@ -29,6 +29,31 @@ class UI {
     <h3 class="page-heading mb-3">Latest Repos</h3>
     <div id="repos"></div>
     `;
+  }
+
+  // Show user repos
+  showRepos(repos) {
+    let output = "";
+
+    repos.forEach((repo) => {
+      output += `
+        <div class="card card-body mb-2">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="col-md-6"> 
+              <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            </div>
+            <div class="d-flex flex-row-reverse"> 
+            <span class="btn btn-primary disabled ms-1"">Stars: ${repo.stargazers_count}</span>
+            <span class="btn btn-secondary disabled ms-1">Watchers: ${repo.watchers_count}</span>
+            <span class="btn btn-success disabled ms-1">Forks: ${repo.forks_count}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    // Output repos
+    document.getElementById("repos").innerHTML = output;
   }
 
   showAlert(message, className) {
