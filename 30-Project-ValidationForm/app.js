@@ -1,3 +1,12 @@
+// Every Reg Expression can be made in an object
+// const regExpressions = {
+//   symbols:  /^[A-Za-z\s]*$/,
+//   name: /^[a-zA-Z\s]{1,20}$/,
+//   zipcode: /^[0-9]{5}(-[0-9]{4})?$/,
+//   email: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
+//   phone: /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/
+// }
+
 const validateName = () => {
   const name = document.getElementById("name");
   const re = /^[A-Za-z\s]*$/;
